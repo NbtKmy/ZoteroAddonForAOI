@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<RDF:RDF
+    xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+    xmlns:NC="http://home.netscape.com/NC-rdf#"
+    xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <RDF:Description
+        RDF:about="urn:mozilla:install-manifest"
+        em:id="nbtkmy1@j-images.ch"
+        em:name="Zotero Swissbib UZH-AOI Locations"
+        em:version="0.1.5"
+        em:type="2"
+        em:creator="Denis Maier"
+        em:contributor="Nobutake Kamiya"
+        em:description="Zotero-Plugin zur Bestandsabfrage im Swissbib UZH-AOI"
+        em:homepageURL="https://github.com/NbtKmy/zotero-swissbib-bb-locations">
+        <em:type>2</em:type>
+        <em:targetApplication>
+            <Description>
+                <em:id>zotero@chnm.gmu.edu</em:id>
+                <em:minVersion>5.0</em:minVersion>
+                <em:maxVersion>5.*</em:maxVersion>
+            </Description>
+        </em:targetApplication>
+    </RDF:Description>
+</RDF:RDF>

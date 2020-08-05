@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://zoteroswissbibaoilocations/locale/overlay.dtd">
+
+<overlay
+    id="zoteroswissbibaoilocations"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <script src="chrome://zoteroswissbibaoilocations/content/scripts/zoteroswissbibaoilocations.js"/>
+    <script src="chrome://zotero/content/include.js"/>
+
+    <popup
+        id="zotero-itemmenu">
+        <menu class="menu-iconic" image="chrome://zoteroswissbibaoilocations/skin/glass.png" id="zotero-itemmenu-zoteroswissbibaoilocations-menu" label="&zotero.zoteroswissbibaoilocations.menu.label;">
+            <menupopup id="zotero-itemmenu-zoteroswissbibaoilocations-menupopup">
+                <menuitem
+                    id="zotero-itemmenu-zoteroswissbibaoilocations-check"
+                    label="&zotero.zoteroswissbibaoilocations.locationlookup.label;"
+                    oncommand="swissbibAOILocationLookup()"/>
+            </menupopup>
+        </menu>
+    </popup>
+</overlay>
+
+<!--Bild von Pixabay, suche nach Magnifying Glass-->
