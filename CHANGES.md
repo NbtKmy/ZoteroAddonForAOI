@@ -1,7 +1,12 @@
 # Änderungen
 
-## 0.1.5
+## 1.0.0
+- Anpassung für ALMA-SRU
+- Name des Add-ons geändert
+
+## 0.1.5 (Gilt nur für UZH-AOI)
 - Bug fix
+- Automatischer Updatemechanismus deaktiviert
 
 ## 0.1.4
 

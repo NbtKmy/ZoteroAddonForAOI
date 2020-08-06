@@ -1,8 +1,8 @@
-content zoteroswissbibaoilocations chrome/content/
+content zoteroaoiholdingcheck chrome/content/
 
-overlay chrome://zotero/content/zoteroPane.xul chrome://zoteroswissbibaoilocations/content/overlay.xul
+overlay chrome://zotero/content/zoteroPane.xul chrome://zoteroaoiholdingcheck/content/overlay.xul
 
-locale  zoteroswissbibaoilocations  en-US   chrome/locale/en-US/
-locale  zoteroswissbibaoilocations  de   chrome/locale/de/
+locale  zoteroaoiholdingcheck  en-US   chrome/locale/en-US/
+locale  zoteroaoiholdingcheck  de   chrome/locale/de/
 
-skin    zoteroswissbibaoilocations  default chrome/skin/default/zoteroswissbibaoilocations/
+skin    zoteroaoiholdingcheck  default chrome/skin/default/zoteroaoiholdingcheck/

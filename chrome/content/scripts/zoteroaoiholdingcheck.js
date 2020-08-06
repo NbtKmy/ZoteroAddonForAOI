@@ -2,7 +2,7 @@
 // Init
 ////////////////
 
-function swissbibAOILocationLookupInitialize () {
+function AOIHoldingLookupInitialize () {
 	// Hilfsvariable implizit global, ist das eine gute Idee?
 	// Aktuell brauche ich die Zähler eigentlich nicht...
 	itemWithoutISBN = 0;
@@ -13,20 +13,19 @@ function swissbibAOILocationLookupInitialize () {
 	kurierbibliothekenAOI = [
 		"Z01", //Zentralbibliothek Zürich
 		"UHS", //UZH HS
-		"UKHIS", //UZH KHI
-		"URIET", //Rietberg
-		];
+		"UKHIS" //UZH KHI
+	];
 
 	libraryCodeUZHOnline = "UZZZZ";
 
 
 
-	// SRU-URL
-	sruPrefix = "http://sru.swissbib.ch/sru/search/defaultdb?query=+dc.identifier+any+";
-	sruSuffix = "&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&x-info-10-get-holdings=true&startRecord=0&recordPacking=XML&availableDBs=defaultdb&sortKeys=Submit+query";
+	// ALMA-SRU-URL
+	sruPrefix = "https://slsp-uzb.alma.exlibrisgroup.com/view/sru/41SLSP_UZB?version=1.2&operation=searchRetrieve&recordSchema=marcxml&query=alma.isbn=";
+	sruSuffix = "&maximumRecords=3";
 
 	// Tags & Strings
-	noResultsInSwissbibAOIText = "Keine Ergebnisse";
+	noResultsAOIText = "Keine Ergebnisse";
 	isWithoutISBNText = "UZH-AOI Standortcheck: ohne (gültige) ISBN";
 	isNotInAOIText = 'UZH-AOI Standortcheck: UZH-AOI nein';
 	isInAOIText= 'UZH-AOI Standortcheck: UZH-AOI ja';
@@ -160,15 +159,15 @@ function processXML(item,xml) {
 	let date = new Date();
 	let thisMonth = date.getMonth() + 1;
 	let currentDate = date.getFullYear() + "-" + thisMonth + "-" + date.getDate() + " (" + date.getHours() + ":"  + date.getMinutes() + ":" + date.getSeconds() + ")";
-	let holdingsFormatted = currentDate + " Bestand Swissbib UZH-AOI\n=======================================";
+	let holdingsFormatted = currentDate + " Bestand UZH-AOI\n=======================================";
 	let xmlResponse = xml.responseXML;
 	// Haben wir Ergebnisse in Swissbib?
 	// Nein =>
 	if (xmlResponse.querySelector("searchRetrieveResponse > numberOfRecords").textContent == "0") {
-		holdingsFormatted += ("\n" + noResultsInSwissbibAOIText);
+		holdingsFormatted += ("\n" + noResultsAOIText);
 	// Ja =>
 	} else {
-		let holdings = xmlResponse.querySelectorAll("holdings > datafield[tag='949']");
+		let holdings = xmlResponse.querySelectorAll("datafield[tag='AVA']");
 		for (const holding of holdings) {
 			let holdingLibraryCode,
 				holdingLibrary,
@@ -178,33 +177,36 @@ function processXML(item,xml) {
 				holdingFormatted;
 
 
-				holdingLibraryCode = holding.querySelector("subfield[code='F']").textContent;
+				holdingLibraryCode = holding.querySelector("subfield[code='b']").textContent;
 
-				if (holding.querySelector("subfield[code='0']")) {
-					holdingLibrary = holding.querySelector("subfield[code='0']").textContent;
+				if (holding.querySelector("subfield[code='q']")) {
+					holdingLibrary = holding.querySelector("subfield[code='q']").textContent;
 				} else {
 					holdingLibrary = holdingLibraryCode;
 					}
-				if (holding.querySelector("subfield[code='1']")){
-					holdingLibraryLocation = holding.querySelector("subfield[code='1']").textContent;
+				//Standort
+				if (holding.querySelector("subfield[code='c']")){
+					holdingLibraryLocation = holding.querySelector("subfield[code='c']").textContent;
 				}
-				if (holding.querySelector("subfield[code='5']")){
-					holdingLibraryConditions = holding.querySelector("subfield[code='5']").textContent;
+				//verfügbar?
+				if (holding.querySelector("subfield[code='e']")){
+					holdingLibraryConditions = holding.querySelector("subfield[code='e']").textContent;
 				}
-				if (holding.querySelector("subfield[code='z']")) {
-					holdingVolumeInformation = holding.querySelector("subfield[code='z']").textContent;
+				//Signatur
+				if (holding.querySelector("subfield[code='d']")) {
+					holdingVolumeInformation = holding.querySelector("subfield[code='d']").textContent;
 				}
 				holdingFormatted = "\n" + holdingLibrary;
 				if (holdingLibraryLocation) holdingFormatted = holdingFormatted + ", " + holdingLibraryLocation;
 				if (holdingLibraryConditions) holdingFormatted = holdingFormatted + ", " + holdingLibraryConditions;
-				if (holdingVolumeInformation) holdingFormatted = holdingsormatted + " (=> " + holdingVolumeInformation + ")";
+				if (holdingVolumeInformation) holdingFormatted = holdingFormatted + " (=> " + holdingVolumeInformation + ")";
 
 			// Aktuelles Holding zur Holdingliste hinzufügen
 			holdingsFormatted += holdingFormatted;
 
 			// In UZH-AOI?
-			// Irgendwo in UZH-AOI oder UZH/ZB Online
-			if (holdingLibrary.startsWith("UZH-AOI") || (holdingLibraryCode == "UZZZZ")) isInAOI = true;
+			// Irgendwo in UZH-AOI oder UZH/ZB Online - holdingLibrary müsste immer "UZH, Asien-Orient-Institut" sein...
+			if (holdingLibraryCode == "UAOI" || holdingLibraryCode == "UZZZZ") isInAOI = true;
 			// Kurierbibliothek
 			if (kurierbibliothekenAOI.includes(holdingLibraryCode)) isinAOIKurierbib = true;
 			// Online spezifisch
@@ -234,8 +236,8 @@ function processXML(item,xml) {
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 
-async function swissbibAOILocationLookup() {
-	swissbibAOILocationLookupInitialize();
+async function AOIHoldingLookup() {
+	AOIHoldingLookupInitialize();
 	// Zuerst holen wir die aktuell ausgewählten Titel
 	var ZoteroPane = Zotero.getActiveZoteroPane();
 	var selectedItems = ZoteroPane.getSelectedItems();
@@ -259,7 +261,7 @@ async function swissbibAOILocationLookup() {
 		} else {
 			// Mindestens eine gültige ISBN vorhanden
 			// SRU-Request
-			let URL = sruPrefix + isbns.join("+") + sruSuffix;
+			let URL = sruPrefix + isbns + sruSuffix;
 			let sru = new XMLHttpRequest();
 			//sru.onreadystatechange = async function() {
 			sru.onreadystatechange = async function() {

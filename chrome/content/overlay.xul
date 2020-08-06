@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
 
-<!DOCTYPE overlay SYSTEM "chrome://zoteroswissbibaoilocations/locale/overlay.dtd">
+<!DOCTYPE overlay SYSTEM "chrome://zoteroaoiholdingcheck/locale/overlay.dtd">
 
 <overlay
-    id="zoteroswissbibaoilocations"
+    id="zoteroaoiholdingcheck"
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-    <script src="chrome://zoteroswissbibaoilocations/content/scripts/zoteroswissbibaoilocations.js"/>
+    <script src="chrome://zoteroaoiholdingcheck/content/scripts/zoteroaoiholdingcheck.js"/>
     <script src="chrome://zotero/content/include.js"/>
 
     <popup
         id="zotero-itemmenu">
-        <menu class="menu-iconic" image="chrome://zoteroswissbibaoilocations/skin/glass.png" id="zotero-itemmenu-zoteroswissbibaoilocations-menu" label="&zotero.zoteroswissbibaoilocations.menu.label;">
-            <menupopup id="zotero-itemmenu-zoteroswissbibaoilocations-menupopup">
+        <menu class="menu-iconic" image="chrome://zoteroaoiholdingcheck/skin/glass.png" id="zotero-itemmenu-zoteroaoiholdingcheck-menu" label="&zotero.zoteroaoiholdingcheck.menu.label;">
+            <menupopup id="zotero-itemmenu-zoteroaoiholdingcheck-menupopup">
                 <menuitem
-                    id="zotero-itemmenu-zoteroswissbibaoilocations-check"
-                    label="&zotero.zoteroswissbibaoilocations.locationlookup.label;"
-                    oncommand="swissbibAOILocationLookup()"/>
+                    id="zotero-itemmenu-zoteroaoiholdingcheck-check"
+                    label="&zotero.zoteroaoiholdingcheck.locationlookup.label;"
+                    oncommand="AOIHoldingLookup()"/>
             </menupopup>
         </menu>
     </popup>
