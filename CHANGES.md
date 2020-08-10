@@ -1,10 +1,15 @@
 # Änderungen
 
+## 1.0.1 
+
+- Anpassung für E-Books
+
 ## 1.0.0
+
 - Anpassung für ALMA-SRU
 - Name des Add-ons geändert
 
-## 0.1.5 (Gilt nur für UZH-AOI)
+## 0.1.5 (Änderungen ab dieser Version gilt nur für UZH-AOI-Add-on)
 - Bug fix
 - Automatischer Updatemechanismus deaktiviert
 

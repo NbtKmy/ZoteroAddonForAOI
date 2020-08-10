@@ -167,7 +167,7 @@ function processXML(item,xml) {
 		holdingsFormatted += ("\n" + noResultsAOIText);
 	// Ja =>
 	} else {
-		let holdings = xmlResponse.querySelectorAll("datafield[tag='AVA']");
+		let holdings = xmlResponse.querySelectorAll("datafield[tag='AVA'], datafield[tag='AVE']");
 		for (const holding of holdings) {
 			let holdingLibraryCode,
 				holdingLibrary,
@@ -176,18 +176,32 @@ function processXML(item,xml) {
 				holdingVolumeInformation,
 				holdingFormatted;
 
+				//Bibliothekscode UZZZZ ist unter dem Unberfeld "l" untergebracht. Sonst unter "b"
+				// wenige Metadaten für e-book haben kein Unterfeld "l" mit UZZZZ - trotzdem verfügbar
+				if (holding.querySelector("subfield[code='b']")){
+					holdingLibraryCode = holding.querySelector("subfield[code='b']").textContent;
+				} else if (holding.querySelector("subfield[code='l']")){
+					holdingLibraryCode = holding.querySelector("subfield[code='l']").textContent;
+				} else if (holding.querySelector("subfield[code='e']").textContent == "Available" || holding.querySelector("subfield[code='e']").textContent == "available"){
+					holdingLibraryCode = "UZZZZ";
+				} else {
+					continue;
+				}
 
-				holdingLibraryCode = holding.querySelector("subfield[code='b']").textContent;
-
+				//Besitzerbibliothek im Text
 				if (holding.querySelector("subfield[code='q']")) {
 					holdingLibrary = holding.querySelector("subfield[code='q']").textContent;
+				} else if (holdingLibraryCode == "UZZZZ"){
+					holdingLibrary = "UZH/ZB online"
 				} else {
 					holdingLibrary = holdingLibraryCode;
 					}
+
 				//Standort
 				if (holding.querySelector("subfield[code='c']")){
 					holdingLibraryLocation = holding.querySelector("subfield[code='c']").textContent;
 				}
+
 				//verfügbar?
 				if (holding.querySelector("subfield[code='e']")){
 					holdingLibraryConditions = holding.querySelector("subfield[code='e']").textContent;
@@ -199,7 +213,7 @@ function processXML(item,xml) {
 				holdingFormatted = "\n" + holdingLibrary;
 				if (holdingLibraryLocation) holdingFormatted = holdingFormatted + ", " + holdingLibraryLocation;
 				if (holdingLibraryConditions) holdingFormatted = holdingFormatted + ", " + holdingLibraryConditions;
-				if (holdingVolumeInformation) holdingFormatted = holdingFormatted + " (=> " + holdingVolumeInformation + ")";
+				if (holdingVolumeInformation) holdingFormatted = holdingFormatted + " (" + holdingVolumeInformation + ")";
 
 			// Aktuelles Holding zur Holdingliste hinzufügen
 			holdingsFormatted += holdingFormatted;

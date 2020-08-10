@@ -13,6 +13,21 @@ Wenn man dies jedoch selber modifizieren will, kann man die anderen Datei, vor a
 
 `$zip -r zotero-aoi-holding-[version].xpi chrome/* chrome.manifest install.rdf`  
 
+Mit diesem Add-on kann man Holdinginformation innerhalb der UZH/ZB zu den jeweiligen Titel suchen, die in Zotero eingetragen sind.
+Bedingungen sind:
+- Titel/Item in Zotero is als Book/Buch markiert
+- Titel/Item hat eine gültige ISBN-Nummer
+
+### How to
+1. Add-on in Zotero installieren
+2. Buchtitel in Zotero markieren, für die man Besitznachweise untersuchen möchte (mehrere Titel möglich)
+3. Mit dem Rechtsklick taucht Menu-Liste. Darunter "UZH-AOI Bestandssuche" und weiter "Bestandssuche" klicken
+4. Dann taucht das Suchergebnis (Bestandsinformation) im Feld "Abstract". Darüber hinaus werden die entsprechenden Tags hinzugefügt
+
+#### Tags
+- UZH-AOI Standortcheck: UZH-AOI ja - Bedeutet entweder, dass die AOI-Bibliothek den Titel besitzt, oder - dass mindestens ein e-Book für UZH/ZB vorhanden ist
+- UZH-AOI Standortcheck: UZH/ZB Online - Bedeutet, dass mindestens ein e-Book für UZH/ZB vorhanden ist
+- UZH-AOI Standortcheck: UZH-AOI Kurierbibliothek - Bedeuet, dass mindestens eine benachbarte Bibliothek des AOIs (Zentralbibliothek, Bibibliothek des Historischen Seminars und Kunsthistorischen Seminars) den Titel besitzt
 
 
 ## License
