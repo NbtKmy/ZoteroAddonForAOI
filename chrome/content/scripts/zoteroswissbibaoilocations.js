@@ -197,7 +197,7 @@ function processXML(item,xml) {
 				holdingFormatted = "\n" + holdingLibrary;
 				if (holdingLibraryLocation) holdingFormatted = holdingFormatted + ", " + holdingLibraryLocation;
 				if (holdingLibraryConditions) holdingFormatted = holdingFormatted + ", " + holdingLibraryConditions;
-				if (holdingVolumeInformation) holdingFormatted = holdingsormatted + " (=> " + holdingVolumeInformation + ")";
+				if (holdingVolumeInformation) holdingFormatted = holdingFormatted + " (=> " + holdingVolumeInformation + ")";
 
 			// Aktuelles Holding zur Holdingliste hinzufügen
 			holdingsFormatted += holdingFormatted;

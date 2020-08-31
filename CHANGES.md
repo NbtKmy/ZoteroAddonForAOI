@@ -1,7 +1,8 @@
 # Änderungen
 
-## 0.1.5
+## 0.1.5 (Betrifft nur AOI-Holdingchecker)
 - Bug fix
+- Automatischer Updatemechanismus wieder eingestellt
 
 ## 0.1.4
 

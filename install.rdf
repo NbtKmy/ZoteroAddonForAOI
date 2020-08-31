@@ -12,8 +12,10 @@
         em:creator="Denis Maier"
         em:contributor="Nobutake Kamiya"
         em:description="Zotero-Plugin zur Bestandsabfrage im Swissbib UZH-AOI"
-        em:homepageURL="https://github.com/NbtKmy/zotero-swissbib-bb-locations">
+        em:homepageURL="https://github.com/NbtKmy/ZoteroAddonForAOI"
+        em:updateURL="https://raw.githubusercontent.com/NbtKmy/ZoteroAddonForAOI/master/zoteroHoldingCheckupdate.rdf">
         <em:type>2</em:type>
+        
         <em:targetApplication>
             <Description>
                 <em:id>zotero@chnm.gmu.edu</em:id>
