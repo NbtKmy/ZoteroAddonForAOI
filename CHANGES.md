@@ -1,8 +1,9 @@
 # Änderungen
 
-## 1.0.1 
+## 1.0.1
 
 - Anpassung für E-Books
+- Automatischer Updatemechanismus wieder aktiviert
 
 ## 1.0.0
 

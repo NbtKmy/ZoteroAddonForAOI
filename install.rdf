@@ -12,7 +12,8 @@
         em:creator="Denis Maier"
         em:contributor="Nobutake Kamiya"
         em:description="Zotero-Plugin zur Bestandsabfrage für UZH-AOI"
-        em:homepageURL="https://github.com/NbtKmy/ZoteroAddonForAOI">
+        em:homepageURL="https://github.com/NbtKmy/ZoteroAddonForAOI"
+        em:updateURL="https://raw.githubusercontent.com/NbtKmy/ZoteroAddonForAOI/v1.0.1/zoteroHoldingCheck-update.rdf">
         <em:type>2</em:type>
         <em:targetApplication>
             <Description>
