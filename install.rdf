@@ -6,14 +6,19 @@
     <RDF:Description
         RDF:about="urn:mozilla:install-manifest"
         em:id="nbtkmy1@j-images.ch"
-        em:name="Zotero Swissbib UZH-AOI Locations"
-        em:version="0.1.5"
+        em:name="Zotero UZH-AOI Holding Check"
+        em:version="1.0.1"
         em:type="2"
         em:creator="Denis Maier"
         em:contributor="Nobutake Kamiya"
+<<<<<<< HEAD
         em:description="Zotero-Plugin zur Bestandsabfrage im Swissbib UZH-AOI"
         em:homepageURL="https://github.com/NbtKmy/ZoteroAddonForAOI"
         em:updateURL="https://raw.githubusercontent.com/NbtKmy/ZoteroAddonForAOI/master/zoteroHoldingCheckupdate.rdf">
+=======
+        em:description="Zotero-Plugin zur Bestandsabfrage für UZH-AOI"
+        em:homepageURL="https://github.com/NbtKmy/ZoteroAddonForAOI">
+>>>>>>> v1.0.1
         <em:type>2</em:type>
         
         <em:targetApplication>
