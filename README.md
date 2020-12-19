@@ -19,7 +19,7 @@ Bedingungen sind:
 - Titel/Item hat eine gültige ISBN-Nummer
 
 ### How to
-1. Add-on in Zotero installieren
+1. Add-on in Zotero installieren. Näheres unter der [Wiki-Seite] (https://github.com/NbtKmy/ZoteroAddonForAOI/wiki)
 2. Buchtitel in Zotero markieren, für die man Besitznachweise untersuchen möchte (mehrere Titel möglich)
 3. Mit dem Rechtsklick taucht Menu-Liste. Darunter "UZH-AOI Bestandssuche" und weiter "Bestandssuche" klicken
 4. Dann taucht das Suchergebnis (Bestandsinformation) im Feld "Abstract". Darüber hinaus werden die entsprechenden Tags hinzugefügt
