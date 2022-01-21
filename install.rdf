@@ -15,6 +15,7 @@
         em:homepageURL="https://github.com/NbtKmy/ZoteroAddonForAOI"
         em:updateURL="https://raw.githubusercontent.com/NbtKmy/ZoteroAddonForAOI/master/zoteroHoldingCheck-update.rdf">
         <em:type>2</em:type>
+        
         <em:targetApplication>
             <Description>
                 <em:id>zotero@chnm.gmu.edu</em:id>
