@@ -213,11 +213,7 @@ function processXML(item,xml) {
 				holdingFormatted = "\n" + holdingLibrary;
 				if (holdingLibraryLocation) holdingFormatted = holdingFormatted + ", " + holdingLibraryLocation;
 				if (holdingLibraryConditions) holdingFormatted = holdingFormatted + ", " + holdingLibraryConditions;
-<<<<<<< HEAD:chrome/content/scripts/zoteroswissbibaoilocations.js
-				if (holdingVolumeInformation) holdingFormatted = holdingFormatted + " (=> " + holdingVolumeInformation + ")";
-=======
 				if (holdingVolumeInformation) holdingFormatted = holdingFormatted + " (" + holdingVolumeInformation + ")";
->>>>>>> v1.0.1:chrome/content/scripts/zoteroaoiholdingcheck.js
 
 			// Aktuelles Holding zur Holdingliste hinzufügen
 			holdingsFormatted += holdingFormatted;

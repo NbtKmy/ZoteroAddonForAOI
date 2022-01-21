@@ -1,13 +1,18 @@
 # Änderungen
 
 <<<<<<< HEAD
+## 1.0.1
+=======
+<<<<<<< HEAD
 ## 0.1.5 (Betrifft nur AOI-Holdingchecker)
 - Bug fix
 - Automatischer Updatemechanismus wieder eingestellt
 =======
 ## 1.0.1 
+>>>>>>> master
 
 - Anpassung für E-Books
+- Automatischer Updatemechanismus wieder aktiviert
 
 ## 1.0.0
 
