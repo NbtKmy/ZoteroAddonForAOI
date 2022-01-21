@@ -5,7 +5,7 @@
     xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <RDF:Description
         RDF:about="urn:mozilla:install-manifest"
-        em:id="nbtkmy1@j-images.ch"
+        em:id="zoteroAoiHoldingCheck@j-images.ch"
         em:name="Zotero UZH-AOI Holding Check"
         em:version="1.0.1"
         em:type="2"
@@ -13,7 +13,7 @@
         em:contributor="Nobutake Kamiya"
         em:description="Zotero-Plugin zur Bestandsabfrage für UZH-AOI"
         em:homepageURL="https://github.com/NbtKmy/ZoteroAddonForAOI"
-        em:updateURL="https://raw.githubusercontent.com/NbtKmy/ZoteroAddonForAOI/v1.0.1/zoteroHoldingCheck-update.rdf">
+        em:updateURL="https://raw.githubusercontent.com/NbtKmy/ZoteroAddonForAOI/master/zoteroHoldingCheck-update.rdf">
         <em:type>2</em:type>
         <em:targetApplication>
             <Description>
