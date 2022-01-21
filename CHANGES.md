@@ -1,15 +1,6 @@
 # Änderungen
 
-<<<<<<< HEAD
-## 1.0.1
-=======
-<<<<<<< HEAD
-## 0.1.5 (Betrifft nur AOI-Holdingchecker)
-- Bug fix
-- Automatischer Updatemechanismus wieder eingestellt
-=======
 ## 1.0.1 
->>>>>>> master
 
 - Anpassung für E-Books
 - Automatischer Updatemechanismus wieder aktiviert
@@ -22,7 +13,7 @@
 ## 0.1.5 (Änderungen ab dieser Version gilt nur für UZH-AOI-Add-on)
 - Bug fix
 - Automatischer Updatemechanismus deaktiviert
->>>>>>> v1.0.1
+
 
 ## 0.1.4
 
